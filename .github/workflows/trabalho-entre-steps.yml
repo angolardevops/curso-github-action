@@ -13,7 +13,7 @@ on:
 # For example, you can use a database service or any other service required for your workflow
 jobs:
   # hosts
-  giropops:
+  entre-steps:
     runs-on: ubuntu-latest
 
     # Steps

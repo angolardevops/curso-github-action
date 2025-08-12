@@ -11,7 +11,7 @@ on:
 # For example, you can use a database service or any other service required for your workflow
 jobs:
   # hosts
-  entyre-steps:
+  giropops:
     runs-on: ubuntu-latest
 
     # Steps
