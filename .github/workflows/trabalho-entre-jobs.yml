@@ -1,4 +1,4 @@
-name: Vendo arquivos compartilhados entre Steps
+name: Vendo arquivos compartilhados entre Jobs
 
 # Triggers
 # This workflow is triggered on pushes to the main branch
@@ -11,22 +11,22 @@ on:
 # Services
 # Define the services that this workflow will use
 # For example, you can use a database service or any other service required for your workflow
-jobs:
-  # hosts
-  entre-steps:
+jobs:    
+  # Steps
+  # Define the steps that will be executed in this job
+  job_1:
     runs-on: ubuntu-latest
-
-    # Steps
-    # Define the steps that will be executed in this job
-    steps:        
+    steps:
       - name: Confere versão do Ubuntu
         run: cat /etc/os-release
-
+      
       - name: Salvar mensagem
         run: echo "Estou fazendo o curso de Github Actions da Linuxtips" > mensagem.txt
-
+      
+  job_2:
+    runs-on: ubuntu-latest
+    steps:    
       - name: Qualquer coisa
         run: ls -lha
-
       - name: Le conteúdo do arquivo
         run: cat mensagem.txt
