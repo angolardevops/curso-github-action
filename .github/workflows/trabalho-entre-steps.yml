@@ -1,30 +1,33 @@
-name: Vendo arquivos compartilhados entre Steps
+name: Primeiro Workflow GitHub
 
 # Triggers
 # This workflow is triggered on pushes to the main branch
 # You can also trigger it on pull requests or other events as needed
 on:
-  workflow_dispatch
+  push:
+    branches:
+      - main
 
 # Services
 # Define the services that this workflow will use
 # For example, you can use a database service or any other service required for your workflow
 jobs:
   # hosts
-  entyre-steps:
+  giropops:
     runs-on: ubuntu-latest
 
     # Steps
     # Define the steps that will be executed in this job
     steps:        
       - name: Confere versão do Ubuntu
-        run: cat /etc/os-release
-
-      - name: Salvar mensagem
-        run: echo "Estou fazendo o curso de Github Actions da Linuxtips" > mensagem.txt
-
-      - name: Qualquer coisa
-        run: ls -lha
-
-      - name: Le conteúdo do arquivo
-        run: cat mensagem.txt
+        run: |
+          echo "Versão do Ubuntu:"
+          lsb_release -a
+      - name: Exibe data e hora
+        run: |
+          echo "Data e hora:"
+          date
+      - name: Exibe informações do sistema
+        run: |
+          echo "Informações do sistema:"
+          uname -a
