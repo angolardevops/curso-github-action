@@ -20,14 +20,13 @@ jobs:
     # Define the steps that will be executed in this job
     steps:        
       - name: Confere versão do Ubuntu
-        run: |
-          echo "Versão do Ubuntu:"
-          lsb_release -a
-      - name: Exibe data e hora
-        run: |
-          echo "Data e hora:"
-          date
-      - name: Exibe informações do sistema
-        run: |
-          echo "Informações do sistema:"
-          uname -a
+        run: cat /etc/os-release
+
+      - name: Salvar mensagem
+        run: echo "Estou fazendo o curso de Github Actions da Linuxtips" > mensagem.txt
+
+      - name: Qualquer coisa
+        run: ls -lha
+
+      - name: Le conteúdo do arquivo
+        run: cat mensagem.txt
