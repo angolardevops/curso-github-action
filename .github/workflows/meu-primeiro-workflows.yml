@@ -1,0 +1,32 @@
+name: Primeiro Workflow GitHub
+
+# Triggers
+# This workflow is triggered on pushes to the main branch
+# You can also trigger it on pull requests or other events as needed
+on:
+  push:
+    branches:
+      - main
+
+# Services
+# Define the services that this workflow will use
+# For example, you can use a database service or any other service required for your workflow
+jobs:
+  giropops:
+    runs-on: ubuntu-latest
+
+    # Steps
+    # Define the steps that will be executed in this job
+    steps:        
+      - name: Confere versão do Ubuntu
+        run: |
+          echo "Versão do Ubuntu:"
+          lsb_release -a
+      - name: Exibe data e hora
+        run: |
+          echo "Data e hora:"
+          date
+      - name: Exibe informações do sistema
+        run: |
+          echo "Informações do sistema:"
+          uname -a
